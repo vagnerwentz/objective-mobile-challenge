@@ -9,7 +9,8 @@ const AppRoutes = () => {
   return (
     <App.Navigator
     screenOptions={{
-      cardStyle: { backgroundColor: '#000' },
+      headerShown: false,
+      cardStyle: { backgroundColor: '#fff' },
     }}
   >
       <App.Screen name="HeroList" component={HeroList} />
