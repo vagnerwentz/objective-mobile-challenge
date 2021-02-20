@@ -1,15 +1,20 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { View, StatusBar } from 'react-native';
+
+import { AppRoutes } from './routes';
 
 declare const global: {HermesInternal: null | {}};
 
-const App = () => {
-  return (
-    <>
-      <View>
-        <Text>Oi</Text>
+const App = () => (
+  <NavigationContainer>
+    <View>
+      <StatusBar backgroundColor='#000' />
+      <View style={{ flex: 1, backgroundColor: '#fff'}}>
+        <AppRoutes />
       </View>
-    </>
-  );
-};
-export default App;
+    </View>
+  </NavigationContainer>
+);
+export { App };
