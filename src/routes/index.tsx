@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { HeroList } from '../pages/HeroList';
+import { Home } from '../pages/Home';
 
 const App = createStackNavigator();
 
@@ -13,7 +13,7 @@ const AppRoutes = () => {
       cardStyle: { backgroundColor: '#fff' },
     }}
   >
-      <App.Screen name="HeroList" component={HeroList} />
+      <App.Screen name="Home" component={Home} />
     </App.Navigator>
   )
 }
