@@ -3,21 +3,17 @@ import md5 from 'md5';
 
 const timestamp = new Date().getDate();
 
-const {
-  REACT_APP_MARVEL_API_URL = '',
-  REACT_APP_MARVEL_PUBLIC_KEY = '',
-  REACT_APP_MARVEL_PRIVATE_KEY = ''
-} = process.env
+import { MARVEL_API, MARVEL_PUBLIC_KEY, MARVEL_PRIVATE_KEY } from '@env';
 
 export const api = Axios.create({
-  baseURL: REACT_APP_MARVEL_API_URL,
+  baseURL: MARVEL_API,
   params: {
-    apikey: REACT_APP_MARVEL_PUBLIC_KEY,
+    apikey: MARVEL_PUBLIC_KEY,
     ts: timestamp,
     hash: md5(
       timestamp +
-      REACT_APP_MARVEL_PRIVATE_KEY +
-      REACT_APP_MARVEL_PUBLIC_KEY
+      MARVEL_PRIVATE_KEY +
+      MARVEL_PUBLIC_KEY
     )
   }
 });
