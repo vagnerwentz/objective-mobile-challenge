@@ -17,7 +17,7 @@ const HeroList = () => {
   const [heroes, setHeroes] = useState<HeroIndexProtocol[]>([]);
 
   useEffect(() => {
-    api.get(`${MARVEL_API}/v1/public/characters?limit=4`).then((
+    api.get(`${MARVEL_API}/v1/public/characters?limit=5`).then((
       response => setHeroes(response.data.data.results)
     ));
   }, []);
@@ -30,14 +30,11 @@ const HeroList = () => {
       {heroes.map((hero => (
         <Content
           key={hero.id}
-          id={hero.id}
-          name={hero.name}
-          thumbnailURL={`${hero.thumbnail.path}/standard_medium.${hero.thumbnail.extension}`}
+          data={hero}
         />
       )))}
-
     </>
   );
 }
 
-export { HeroList } ;
+export { HeroList };
