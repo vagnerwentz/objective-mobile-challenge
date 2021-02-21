@@ -11,8 +11,8 @@ export const ContentContainer = styled(RectButton)`
   margin-top: 18px;
 `;
 
-export const ThumbnailImage = styled.View`
-  background-color: #000;
+export const ThumbnailImage = styled.Image`
+  background-color: ${grayColor};
   margin-left: 42px;
   height: 56px;
   width: 56px;

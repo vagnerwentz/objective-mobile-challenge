@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { HeroContentProps } from '../interfaces/hero-protocols';
 
 import {
   ContentContainer,
@@ -8,12 +9,14 @@ import {
   Line,
 } from './styles';
 
-const Content = () => {
+const Content = ({ name, thumbnailURL }: HeroContentProps) => {
   return (
     <>
       <ContentContainer>
-        <ThumbnailImage />
-        <HeroName>Tony Stark</HeroName>
+        <ThumbnailImage
+          source={thumbnailURL}
+        />
+        <HeroName>{name}</HeroName>
       </ContentContainer>
       <Line />
     </>
