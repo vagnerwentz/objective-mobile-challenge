@@ -10,18 +10,18 @@ import {
   Line,
 } from './styles';
 
-const Content = ({ data }: HeroContentProps) => {
+const Content = ({ data: hero }: HeroContentProps) => {
   const navigation = useNavigation();
 
   return (
     <>
-      <ContentContainer onPress={() => navigation.navigate('Detail', data)}>
+      <ContentContainer onPress={() => navigation.navigate('Detail', hero)}>
         <ThumbnailImage
           source={{uri:
-            `${data.thumbnail.path}/standard_medium.${data.thumbnail.extension}`
+            `${hero.thumbnail.path}/standard_medium.${hero.thumbnail.extension}`
           }}
         />
-        <HeroName>{data.name}</HeroName>
+        <HeroName>{hero.name}</HeroName>
       </ContentContainer>
       <Line />
     </>
