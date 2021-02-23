@@ -61,7 +61,7 @@ export const BadgeViewValue = styled.View<BadgeColor>`
 `;
 
 export const BadgeValue = styled.Text`
-  font-size: 18px;
+  font-size: 16px;
   color: #fff;
   font-family: 'Roboto-Regular';
 `;
