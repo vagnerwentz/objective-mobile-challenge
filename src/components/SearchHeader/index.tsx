@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+
+import { HeroContext } from '../../hooks/context/heroContext';
 
 import {
   Container,
@@ -12,6 +14,13 @@ import {
 } from './styles';
 
 const SearchHeader = () => {
+  const { searchHero } = useContext(HeroContext);
+  const [heroName, setHeroName] = useState<string>('');
+
+  useEffect(() => {
+    searchHero({ heroName });
+  }, [heroName, searchHero]);
+
   return (
     <Container>
       <ContainerTitle>
@@ -25,7 +34,11 @@ const SearchHeader = () => {
         </LabelSearchBar>
       </ContainerSearch>
 
-      <SearchBar />
+      <SearchBar
+        placeholder='Encontre seu personagem favorito rapidinho!'
+        onChangeText={(text) => setHeroName(text)}
+        value={heroName}
+      />
     </Container>
   );
 }
