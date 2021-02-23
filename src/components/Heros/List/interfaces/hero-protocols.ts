@@ -11,61 +11,13 @@ export interface HeroListProtocol {
         path: string;
         extension: string;
       };
-      events: {
-        items: {
-          name: string;
-        }[]
-      }
-      series: {
-        items: {
-          name: string;
-        }[]
-      }
+      comics: ContentApperedProps;
+      events: ContentApperedProps;
+      series: ContentApperedProps;
+      stories: ContentApperedProps;
     }>
   }
 };
-
-export interface MarvelHeroShowCharacter {
-  data: {
-    results: {
-      id: number
-      name: string
-      description: string
-      thumbnail: {
-        path: string
-        extension: string
-      }
-      comics: {
-        available: number
-        items: {
-          resourceURI: string
-          name: string
-        }[]
-      }
-      events: {
-        available: number
-        items: {
-          resourceURI: string
-          name: string
-        }[]
-      }
-      series: {
-        available: number
-        items: {
-          resourceURI: string
-          name: string
-        }[]
-      }
-      stories: {
-        available: number
-        items: {
-          resourceURI: string
-          name: string
-        }[]
-      }
-    }[]
-  }
-}
 
 export interface HeroIndexProtocol {
   id: number;
