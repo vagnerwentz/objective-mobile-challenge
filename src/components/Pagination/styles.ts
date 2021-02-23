@@ -20,7 +20,7 @@ export const PagesContainer = styled.View`
 
 export const PageSelection = styled.View<PageSelectionButtonProps>`
   border-radius: 8px;
-  border: 1px #D20A0A;
+  border: 1px #d20a0a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,12 +29,12 @@ export const PageSelection = styled.View<PageSelectionButtonProps>`
   border-radius: 15px;
   margin-left: 15px;
   margin-right: 15px;
-  background-color: ${props => props.selected === true ? '#D20A0A' : '#fff'};
+  background-color: ${props => (props.selected === true ? '#D20A0A' : '#fff')};
 `;
 
 export const PageNumber = styled.Text<PageSelectionButtonProps>`
   font-size: 20px;
-  color: ${props => props.selected == true ? '#fff' : '#D20A0A'};
+  color: ${props => (props.selected === true ? '#fff' : '#D20A0A')};
 `;
 
 export const ArrowButton = styled(TouchableOpacity)`
