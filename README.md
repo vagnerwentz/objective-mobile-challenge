@@ -18,7 +18,9 @@ cd objective-mobile-challenge
 
 <h3>2° Passo: Instalar as dependências</h3>
 A instalação das dependências do projeto é importante para que seja instalado todas as bibliotecas usadas durante o desenvolvimento do projeto.
-Para o desenvolvimento eu utilizei o `yarn`.
+Para o desenvolvimento eu utilizei o 
+
+```yarn```.
 
 ```bash
 # npm
