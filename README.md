@@ -46,7 +46,7 @@ MARVEL_PUBLIC_KEY = PUBLIC_KEY
 MARVEL_PRIVATE_KEY = PRIVATE_KEY
 ```
 
-<h3>4° PAsso: Executar o projeto</h3>
+<h3>4° Passo: Executar o projeto</h3>
 
 Após tudo configurado, agora podemos iniciar a nossa aplicação.
 
