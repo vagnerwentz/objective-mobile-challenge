@@ -31,4 +31,3 @@ export const Line = styled.View`
   margin-top: 18px;
   border-color: ${roseColor};
 `;
-
