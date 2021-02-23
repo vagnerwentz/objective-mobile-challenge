@@ -29,11 +29,12 @@ interface AppearedListProps {
 const HeroApperedOn = ({ id }: HeroItemApperedOn) => {
   const { appearedType } = useContext(HeroContext);
   const [appearedData, setAppearedData] = useState<AppearedListProps>({} as AppearedListProps);
+  const type = appearedType === "" ? 'stories' : appearedType;
 
   useEffect(() => {
-    api.get(`${MARVEL_API}/v1/public/characters/${id}/${appearedType}`).then((response) =>
-    setAppearedData(response.data.data),
-  )}, [appearedType]);
+    api.get(`${MARVEL_API}/v1/public/characters/${id}/${type}`).then((response) =>
+    setAppearedData(response.data.data)
+  ).catch((err) => console.log(err))}, [appearedType]);
 
   return (
     <>
