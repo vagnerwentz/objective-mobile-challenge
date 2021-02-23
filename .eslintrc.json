@@ -27,7 +27,10 @@
         "@typescript-eslint"
     ],
     "rules": {
+      "import/no-unresolved": "off",
       "import/prefer-default-export": "off",
+      "react/prop-types": "off",
+      "no-unused-vars": "warn",
       "prettier/prettier": "error",
       "import/extensions": [
         "error",
