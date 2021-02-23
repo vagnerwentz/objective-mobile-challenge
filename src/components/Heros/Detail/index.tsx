@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HeroDetail } from '../List/interfaces/hero-protocols'
+import { HeroDetail } from '../List/interfaces/hero-protocols';
 
 import { HeroApperances } from './components/HeroApperances';
 import { HeroApperedOn } from './components/HeroApperedOn';
@@ -10,18 +10,19 @@ import {
   HeroImage,
   HeroName,
   HeroDescription,
- } from './styles';
+} from './styles';
 
 const Detail = (heroParams: HeroDetail) => {
-  const { route: { params: hero } } = heroParams;
+  const {
+    route: { params: hero },
+  } = heroParams;
 
   return (
     <>
       <HeaderContainer>
-
         <HeroImage
-          source={{uri:
-            `${hero.thumbnail.path}/standard_medium.${hero.thumbnail.extension}`
+          source={{
+            uri: `${hero.thumbnail.path}/standard_medium.${hero.thumbnail.extension}`,
           }}
         />
         <HeroName>{hero.name}</HeroName>
@@ -36,11 +37,9 @@ const Detail = (heroParams: HeroDetail) => {
           series={hero.series.available}
         />
       </HeaderContainer>
-      <HeroApperedOn
-        id={hero.id}
-      />
+      <HeroApperedOn id={hero.id} />
     </>
   );
-}
+};
 
 export { Detail };
