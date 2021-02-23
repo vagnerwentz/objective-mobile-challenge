@@ -5,7 +5,6 @@ const redDefault = '#D42026';
 export const Container = styled.View`
   flex: 1;
   flex-direction: column;
-  justify-content: space-between;
 `;
 
 export const HerosListHeader = styled.View`
