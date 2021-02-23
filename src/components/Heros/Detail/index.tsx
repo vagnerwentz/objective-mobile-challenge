@@ -18,6 +18,7 @@ const Detail = (heroParams: HeroDetail) => {
   return (
     <>
       <HeaderContainer>
+
         <HeroImage
           source={{uri:
             `${hero.thumbnail.path}/standard_medium.${hero.thumbnail.extension}`

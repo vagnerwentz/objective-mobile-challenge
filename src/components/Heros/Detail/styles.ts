@@ -7,7 +7,7 @@ export const HeaderContainer = styled.View`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 46px;
+  margin-top: 15px;
 `;
 
 export const HeroImage = styled.Image`
