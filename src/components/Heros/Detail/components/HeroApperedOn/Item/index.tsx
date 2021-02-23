@@ -15,12 +15,12 @@ interface ItemProps {
 const ItemFlatList = ({ name, imageUri }: ItemProps) => {
   return (
     <ContentContainer>
-      <ImageApperedOn source={{uri: imageUri}} />
+      <ImageApperedOn source={{ uri: imageUri }} />
       <ContainerText>
         <Type>{name}</Type>
       </ContainerText>
     </ContentContainer>
   );
-}
+};
 
 export { ItemFlatList };

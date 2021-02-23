@@ -3,9 +3,8 @@ export interface HeroDetailAppearanceProps {
   series: number;
   stories: number;
   events: number;
-};
+}
 
 export interface HeroItemApperedOn {
   id: number;
-};
-
+}

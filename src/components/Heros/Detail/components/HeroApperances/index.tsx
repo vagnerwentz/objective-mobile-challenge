@@ -9,7 +9,7 @@ import {
   BadgeDescription,
   BadgeViewValue,
   BadgeValue,
- } from './styles';
+} from './styles';
 
 enum ButtonTypeValue {
   STORIES = 'stories',
@@ -18,50 +18,68 @@ enum ButtonTypeValue {
   COMICS = 'comics',
 }
 
-const HeroApperances = ({stories, comics, events, series}: HeroDetailAppearanceProps) => {
+const HeroApperances = ({
+  stories,
+  comics,
+  events,
+  series,
+}: HeroDetailAppearanceProps) => {
   const { handleViewTheHeroApparitions } = useContext(HeroContext);
 
   return (
     <>
       <BadgeContent horizontal showsHorizontalScrollIndicator={false}>
         {stories !== 0 && (
-           <Badge type="stories" onPress={() => handleViewTheHeroApparitions(ButtonTypeValue.STORIES)}>
-              <BadgeDescription >Estórias</BadgeDescription>
-              <BadgeViewValue type="stories">
-                  <BadgeValue>{stories}</BadgeValue>
-              </BadgeViewValue>
-           </Badge>
+          <Badge
+            type="stories"
+            onPress={() =>
+              handleViewTheHeroApparitions(ButtonTypeValue.STORIES)}
+          >
+            <BadgeDescription>Estórias</BadgeDescription>
+            <BadgeViewValue type="stories">
+              <BadgeValue>{stories}</BadgeValue>
+            </BadgeViewValue>
+          </Badge>
         )}
 
         {series !== 0 && (
-          <Badge type="series" onPress={() => handleViewTheHeroApparitions(ButtonTypeValue.SERIES)}>
-            <BadgeDescription >Séries</BadgeDescription>
+          <Badge
+            type="series"
+            onPress={() => handleViewTheHeroApparitions(ButtonTypeValue.SERIES)}
+          >
+            <BadgeDescription>Séries</BadgeDescription>
             <BadgeViewValue type="series">
-                <BadgeValue>{series}</BadgeValue>
-              </BadgeViewValue>
+              <BadgeValue>{series}</BadgeValue>
+            </BadgeViewValue>
           </Badge>
         )}
 
         {events !== 0 && (
-          <Badge type="events" onPress={() => handleViewTheHeroApparitions(ButtonTypeValue.EVENTS)}>
-            <BadgeDescription >Eventos</BadgeDescription>
+          <Badge
+            type="events"
+            onPress={() => handleViewTheHeroApparitions(ButtonTypeValue.EVENTS)}
+          >
+            <BadgeDescription>Eventos</BadgeDescription>
             <BadgeViewValue type="events">
-                <BadgeValue>{events}</BadgeValue>
-              </BadgeViewValue>
+              <BadgeValue>{events}</BadgeValue>
+            </BadgeViewValue>
           </Badge>
         )}
 
         {comics !== 0 && (
-          <Badge type="comics" onPress={() => handleViewTheHeroApparitions(ButtonTypeValue.COMICS)}>
-            <BadgeDescription >HQs</BadgeDescription>
+          <Badge
+            type="comics"
+            onPress={() => handleViewTheHeroApparitions(ButtonTypeValue.COMICS)}
+          >
+            <BadgeDescription>HQs</BadgeDescription>
             <BadgeViewValue type="comics">
-                <BadgeValue>{comics}</BadgeValue>
-              </BadgeViewValue>
+              <BadgeValue>{comics}</BadgeValue>
+            </BadgeViewValue>
           </Badge>
         )}
       </BadgeContent>
     </>
   );
-}
+};
 
 export { HeroApperances };
