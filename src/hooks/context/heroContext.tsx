@@ -6,8 +6,8 @@ import { api } from '../../services/marvelApi';
 
 import { HeroIndexProtocol } from '../../components/Heros/List/interfaces/hero-protocols';
 
-interface HeroName {
-  [key: string]: string;
+export interface HeroName {
+  name: string;
 }
 
 interface HeroContextProps {
@@ -20,7 +20,7 @@ interface HeroContextProps {
   handleCallAPIToListHeroes(offset: number): Promise<void>;
   handleCallAPIToListTheHeroDetail(heroId: number): Promise<void>;
   handleViewTheHeroApparitions(type: string): void;
-  searchHero(searchName: HeroName): void;
+  searchHero(name: HeroName): void;
 }
 
 export const HeroContext = createContext<HeroContextProps>(
@@ -34,6 +34,7 @@ export const HeroProvider: React.FC = ({ children }) => {
   const [totalOfHeroes, setTotalOfHeroes] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [hero, setHero] = useState<HeroIndexProtocol>({} as HeroIndexProtocol);
+  const [initialHeroes, setInitalHeroes] = useState<HeroIndexProtocol[]>([]);
 
   const handleViewTheHeroApparitions = (type = 'stories') => {
     setAppearedType(type);
@@ -44,6 +45,8 @@ export const HeroProvider: React.FC = ({ children }) => {
     const response = await api.get(
       `${MARVEL_API}/v1/public/characters?limit=5&offset=${offset}`,
     );
+
+    setInitalHeroes(response.data.data.results);
     setHeroes(response.data.data.results);
     setTotalOfHeroes(response.data.data.total);
     setLoading(false);
@@ -57,11 +60,18 @@ export const HeroProvider: React.FC = ({ children }) => {
   }
 
   const searchHero = useCallback(
-    ({ heroName }: HeroName) => {
-      const results = heroes.filter(({ name }) => name.includes(heroName));
-      setFilteredHero(results);
+    async ({ name }: HeroName) => {
+      if (!name) {
+        setHeroes(initialHeroes);
+        setFilteredHero(initialHeroes);
+        return;
+      }
+      const response = await api.get(
+        `${MARVEL_API}/v1/public/characters?nameStartsWith=${name}&limit=5`,
+      );
+      setFilteredHero(response.data.data.results);
     },
-    [heroes],
+    [initialHeroes],
   );
 
   return (
